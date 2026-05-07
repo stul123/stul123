@@ -519,6 +519,16 @@ function App() {
     setCategoryError('')
   }
 
+  const handleDeleteExpense = (expenseId) => {
+    const nextExpenses = expenses.filter((expense) => expense.id !== expenseId)
+    setExpenses(nextExpenses)
+    setFeedback({
+      ...createFeedback(getTodayTotal(nextExpenses, now)),
+      isToday: true,
+      dateLabel: longDateLabel.format(now),
+    })
+  }
+
   return (
     <>
       <main className="app-shell">
@@ -683,7 +693,17 @@ function App() {
                         </span>
                       </div>
                     </div>
-                    <strong>{formatMoney(expense.amount)}</strong>
+                    <div className="expense-side">
+                      <strong>{formatMoney(expense.amount)}</strong>
+                      <button
+                        type="button"
+                        className="expense-delete"
+                        aria-label="Удалить трату"
+                        onClick={() => handleDeleteExpense(expense.id)}
+                      >
+                        Удалить
+                      </button>
+                    </div>
                   </article>
                 )
               })

@@ -385,6 +385,26 @@
   justify-content: flex-start;
 }
 
+.expense-side {
+  display: grid;
+  justify-items: end;
+  gap: 6px;
+}
+
+.expense-delete {
+  border: 0;
+  background: transparent;
+  color: #ff8f87;
+  font: inherit;
+  font-size: 13px;
+  padding: 0;
+  cursor: pointer;
+}
+
+.expense-delete:hover {
+  opacity: 0.8;
+}
+
 .breakdown-emoji,
 .expense-emoji,
 .feedback-emoji,
