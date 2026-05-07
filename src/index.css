@@ -1,0 +1,72 @@
+:root {
+  --text-main: #f5f7fb;
+  --text-soft: #8e97ab;
+  --page-bg:
+    radial-gradient(circle at top, rgba(68, 76, 104, 0.34), transparent 34%),
+    radial-gradient(circle at 0% 100%, rgba(42, 93, 67, 0.18), transparent 30%),
+    linear-gradient(180deg, #07080c 0%, #11131a 48%, #090a0f 100%);
+  --card-edge: rgba(255, 255, 255, 0.1);
+  --font-display: 'SF Pro Display', 'SF Pro Text', -apple-system, BlinkMacSystemFont,
+    'Segoe UI', sans-serif;
+  --font-body: 'SF Pro Text', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  color: var(--text-main);
+  font-family: var(--font-body);
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  background: var(--page-bg);
+}
+
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  background:
+    linear-gradient(
+      180deg,
+      rgba(255, 255, 255, 0.06) 0%,
+      rgba(255, 255, 255, 0) 26%,
+      rgba(255, 255, 255, 0) 74%,
+      rgba(255, 255, 255, 0.03) 100%
+    );
+  opacity: 0.75;
+}
+
+button,
+input {
+  font-family: inherit;
+}
+
+#root {
+  position: relative;
+  isolation: isolate;
+}
+
+h1,
+h2 {
+  font-family: var(--font-display);
+  font-weight: 700;
+  letter-spacing: -0.04em;
+  color: var(--text-main);
+}
+
+p,
+strong,
+span {
+  letter-spacing: -0.01em;
+}
